@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+  background: #e1ecf2;
+}
+.data-table{
+  z-index: -1;
+}
+.data-table tr td{
+  vertical-align: middle;
+}
+.wrapper{
+  margin: 10px;
+}
+.wrapper .top_navbar{
+  width: calc(100% - 20px);
+  height: 60px;
+  display: flex;
+  position: fixed;
+  top: 10px;
+  z-index: 3;
+}
+
+.wrapper .top_navbar .hamburger{
+  width: 70px;
+  height: 100%;
+  background: #2e4ead;
+  padding: 15px 17px;
+  border-top-left-radius: 20px;
+  cursor: pointer;
+}
+
+.wrapper .top_navbar .hamburger div{
+  width: 35px;
+  height: 4px;
+  background: #92a6e2;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.wrapper .top_navbar .top_menu{
+  width: calc(100% - 70px);
+  height: 100%;
+  background: #fff;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.wrapper .top_navbar .top_menu .logo{
+  color: #2e4ead;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.wrapper .top_navbar .top_menu ul{
+  display: flex;
+}
+
+.wrapper .top_navbar .top_menu ul li a{
+  display: block;
+  margin: 0 10px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #2e4ead;
+  border-radius: 50%;
+  color: #2e4ead;
+}
+
+.wrapper .top_navbar .top_menu ul li a:hover{
+  background: #4360b5;
+  color: #fff;
+}
+
+.wrapper .top_navbar .top_menu ul li a:hover i{
+  color: #fff;
+}
+
+.wrapper .sidebar{
+  z-index: 3;
+  position: fixed;
+  top: 70px;
+  left: 10px;
+  background: #2e4ead;
+  width: 200px;
+  height: calc(100% - 80px);
+  border-bottom-left-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+    margin-bottom: 1px;
+    color: #92a6e2;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.wrapper .sidebar ul li a:before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: #92a6e2;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.wrapper .sidebar ul li a span.icon{
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.wrapper .sidebar ul li a span.title{
+  display: inline-block;
+}
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+  background: #4360b5;
+  color: #fff;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+  display: block;
+}
+
+.wrapper .main_container{
+  width: (100% - 200px);
+  margin-top: 70px;
+  margin-left: 200px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.wrapper .main_container .item{
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.wrapper.colp .sidebar{
+  width: 70px;
+}
+
+.wrapper.colp .sidebar ul li a{
+  text-align: center; 
+}
+
+.wrapper.colp .sidebar ul li a span.icon{
+  margin: 0;
+}
+
+.wrapper.colp .sidebar ul li a span.title{
+  display: none;
+}
+
+.wrapper.colp .main_container{
+  width: (100% - 70px);
+  margin-left: 70px;
+}
+
+
+.add-new{
+  outline: none;
+  border: none;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 7px;
+}
+
+.btn-new{
+  
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.767);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.404);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 7px;
+}
+
+
+.details{
+  background-color: #fff;
+  color: black;
+}
+
+.breadcrumb {
+	/*centering*/
+	display: inline-block;
+	overflow: hidden;
+	border-radius: 5px;
+  text-decoration: none;
+}
+
+.breadcrumb a {
+	text-decoration: none;
+	outline: none;
+	display: block;
+	float: left;
+	font-size: 12px;
+	line-height: 36px;
+	color: white;
+	/*need more margin on the left of links to accomodate the numbers*/
+	padding: 0 10px 0 60px;
+	background: #666;
+	background: linear-gradient(#666, #333);
+	position: relative;
+}
+/*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
+.breadcrumb a:first-child {
+  text-decoration: none;
+	padding-left: 46px;
+	border-radius: 5px 0 0 5px; /*to match with the parent's radius*/
+}
+.breadcrumb a:first-child:before {
+	left: 14px;
+}
+.breadcrumb a:last-child {
+  text-decoration: none;
+	border-radius: 0 5px 5px 0; /*this was to prevent glitches on hover*/
+	padding-right: 20px;
+}
+
+/*hover/active styles*/
+.breadcrumb a.active, .breadcrumb a:hover{
+	background: #333;
+	background: linear-gradient(#333, #000);
+}
+.breadcrumb a.active:after, .breadcrumb a:hover:after {
+	background: #333;
+	background: linear-gradient(135deg, #333, #000);
+}
+
+/*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+.breadcrumb a:after {
+	content: '';
+	position: absolute;
+	top: 0; 
+	right: -18px; /*half of square's length*/
+	/*same dimension as the line-height of .breadcrumb a */
+	width: 36px; 
+	height: 36px;
+	/*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
+	length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
+	if diagonal required = 1; length = 1/1.414 = 0.707*/
+	transform: scale(0.707) rotate(45deg);
+	/*we need to prevent the arrows from getting buried under the next link*/
+	z-index: 1;
+	/*background same as links but the gradient will be rotated to compensate with the transform applied*/
+	background: #666;
+	background: linear-gradient(135deg, #666, #333);
+	/*stylish arrow design using box shadow*/
+	box-shadow: 
+		2px -2px 0 2px rgba(0, 0, 0, 0.4), 
+		3px -3px 0 2px rgba(255, 255, 255, 0.1);
+	/*
+		5px - for rounded arrows and 
+		50px - to prevent hover glitches on the border created using shadows*/
+	border-radius: 0 5px 0 50px;
+}
+/*we dont need an arrow after the last link*/
+.breadcrumb a:last-child:after {
+	content: none;
+}
+
+.admin_bg{
+  background-attachment: fixed;
+  background-image: url('../images/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .8;
+}
+
+.login-box {
+  height: auto;
+  background: #1A2226;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.login-box img {
+  position: inherit;
+  top: -50px;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.466);
+}
+
+.login-box .login-title {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ECF0F5;
+}
+
+.login-box .login-form { 
+  margin: 25px 5px;
+  text-align: left;
+}
+
+.login-box input[type=email] {
+  background-color: #1A2226;
+  border: none;
+  border-bottom: 2px solid #0DB8DE;
+  border-top: 0px;
+  border-radius: 0px;
+  font-weight: bold;
+  outline: 0;
+  margin-bottom: 20px;
+  padding-left: 0px;
+  color: #ECF0F5;
+}
+
+.login-box input[type=password] {
+  background-color: #1A2226;
+  border: none;
+  border-bottom: 2px solid #0DB8DE;
+  border-top: 0px;
+  border-radius: 0px;
+  font-weight: bold;
+  outline: 0;
+  padding-left: 0px;
+  margin-bottom: 20px;
+  color: #ECF0F5;
+}
+
+.login-box .form-group {
+  margin-bottom: 40px;
+  outline: 0px;
+}
+
+.login-box .form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 2px solid #0DB8DE;
+  outline: 0;
+  background-color: #1A2226;
+  color: #ECF0F5;
+}
+
+.login-box input:focus {
+  outline: none;
+  box-shadow: 0 0 0;
+}
+
+
+
+.login-box .form-control-label {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.login-box .login-form .login-button button {
+  background-color: #1A2226;
+  padding: 10px;
+  align-content: center;
+  width: 100%;
+  border-color: #0DB8DE;
+  color: #0DB8DE;
+  border-radius: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.login-box .login-button button:hover {
+  background-color: #0DB8DE;
+  right: 0px;
+  color: #fff;
+}
+
+
+.login-box .login-button {
+  padding-right: 0px;
+  text-align: right;
+  margin-bottom: 25px;
+}
+
+.login-box .login-text {
+  text-align: left;
+  padding-left: 0px;
+  color: #A2A4A4;
+}
+
+.dash-box{
+  background-color: #fff;
+  color:#000;
+  transition: .4s;
+}
+.dash-box:hover{
+  background-color: #2e4ead;
+}
+
+
+.footer {
+    overflow: hidden;
+    margin-top: 250px;
+    background: #000000;
+    color: #627482 !important;
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+
+.small {
+    font-size: calc(12px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+.bold-text {
+    color: #989c9e !important
+}
+
+.mt-55 {
+    margin-top: calc(50px + (60 - 50) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+h3 {
+    font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+.social {
+    font-size: 21px !important
+}
+
+.rights {
+    font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
+}

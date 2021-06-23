@@ -1,0 +1,16 @@
+{
+    "name": "sms/project",
+    "authors": [
+        {
+            "name": "hms",
+            "email": "hms@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Libs\\": "_classes/Libs/",
+            "Helpers\\": "_classes/Helpers/"
+        }
+    }
+}
